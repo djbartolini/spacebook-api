@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 const User = require('../models/User');
-const { userSeed } = require('./data');
+const userSeed = require('./data');
 
 console.time('seeding. . .');
 
