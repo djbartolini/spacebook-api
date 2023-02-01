@@ -48,8 +48,8 @@ module.exports = {
         !user
           ? res.status(404).json({ message: 'No users with provided ID' })
           : Thought.findOneAndUpdate(
-            { username: req.params.userId },
-            { $pull: { username: req.params.userId } },
+            { _id: req.params.userId },
+            { $pull: { username: req.params.username } },
             { new: true }
           )
       )
