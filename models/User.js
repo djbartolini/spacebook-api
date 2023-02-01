@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
-const thoughtSchema = require('./Thought')
+const  thoughtSchema  = require('./Thought');
+const reactionSchema = require('./Reaction');
 
 const userSchema = new Schema(
   {
@@ -19,25 +20,21 @@ const userSchema = new Schema(
       message: p => `${p} is not a valid email!`
     },
   },
-  thoughts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'thoughts'
-    }
-  ],
-  // friends: [{ type: Schema.Types.ObjectId, ref: 'user' }]
+  thoughts: [{ type: Schema.Types.ObjectId, ref: 'thoughts' }],
+  friends: [{ type: Schema.Types.ObjectId, ref: 'user' }]
 },
 {
   toJSON: {
     getters: true,
+    virtuals: true,
   },
   id: false,
 }
 )
 
-// userSchema.virtual('friendCount').get(function () {
-//   return this.friends.length;
-// });
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+});
 
 const User = model('user', userSchema);
 

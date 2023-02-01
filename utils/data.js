@@ -1,21 +1,5 @@
 const userSeed = [
   {
-    "username": "bartz555",
-    "email": "bartz555@mail.com"
-  },
-  {
-    "username": "lenna123",
-    "email": "lenna@mail.com"
-  },
-  {
-    "username": "galuf0",
-    "email": "galufsmail@box.com"
-  },
-  {
-    "username": "faris-not-bueller",
-    "email": "faris5@gmail.com"
-  },
-  {
     "username": "cloud9",
     "email": "cloud9@mail.com"
   },
@@ -66,6 +50,26 @@ const userSeed = [
   {
     "username": "lulu222",
     "email": "u2lulu@mail.com"
+  },
+  {
+    "username": "vaan-mon",
+    "email": "vaan@email.com"
+  },
+  {
+    "username": "panelo-yo",
+    "email": "pen@lo.co"
+  },
+  {
+    "username": "balthier",
+    "email": "balthier12@yahoo.com"
+  },
+  {
+    "username": "fran",
+    "email": "i-love-bunnies@hotmail.com"
+  },
+  {
+    "username": "basch",
+    "email": "fonrosenburg12@mail.net"
   }
 ]
 

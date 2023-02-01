@@ -24,6 +24,13 @@ module.exports = {
   // create a thought
   createThought(req, res) {
     Thought.create(req.body)
+      .then((thought) => {
+        return User.findOneAndUpdate(
+          { username: req.body.username },
+          { $addToSet: { thoughts: thought._id } },
+          { new: true }
+        )
+      })
       .then((thought) => res.json(thought))
       .catch((err) => res.status(500).json(err));
   },
@@ -68,7 +75,7 @@ module.exports = {
   deleteThoughtReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
-      { $pull: { reactions: { reactionId: req.params.reactionId } } },
+      { $pull: { reactions: { _id: req.params.reactionId } } },
       { new: true }
     )
       .then((thought) =>
