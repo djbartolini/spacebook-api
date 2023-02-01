@@ -13,7 +13,7 @@ const reactionSchema = new Schema(
       maxlength: 280,
     },
     username: {
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.String,
       ref: 'user',
     },
     createdAt: {
